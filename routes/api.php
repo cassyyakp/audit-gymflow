@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\SubscriptionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -16,14 +17,16 @@ Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logo
 
 Route::middleware('auth:sanctum')->group(function () {
 
-    Route::get('/subscriptions', [SubscriptionController::class, 'index']);
+    // subscriptions
+    // Route::get('/subscriptions', [SubscriptionController::class, 'index']);
+    // Route::post('/subscriptions', [SubscriptionController::class, 'store']);
+    // Route::get('/subscriptions/{id}', [SubscriptionController::class, 'show']);
+    // Route::put('/subscriptions/{id}', [SubscriptionController::class, 'update']);
+    // Route::delete('/subscriptions/{id}', [SubscriptionController::class, 'destroy']);
 
-    Route::post('/subscriptions', [SubscriptionController::class, 'store']);
-
-    Route::get('/subscriptions/{id}', [SubscriptionController::class, 'show']);
-
-    Route::put('/subscriptions/{id}', [SubscriptionController::class, 'update']);
-
-    Route::delete('/subscriptions/{id}', [SubscriptionController::class, 'destroy']);
+    // notifications
+    // Route::get('/notifications', [NotificationController::class, 'index']);
+    // Route::post('/notifications', [NotificationController::class, 'store']);
+    // Route::delete('/notifications/{id}', [NotificationController::class, 'destroy']);
 
 });

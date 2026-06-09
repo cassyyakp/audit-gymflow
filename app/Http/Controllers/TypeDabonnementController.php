@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Notification;
-use Illuminate\Http\Request;
+use App\Models\Type_dabonnement;
+use App\Http\Requests\StoreType_dabonnementRequest;
+use App\Http\Requests\UpdateType_dabonnementRequest;
 
-class NotificationController extends Controller
+class TypeDabonnementController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,7 +27,7 @@ class NotificationController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreType_dabonnementRequest $request)
     {
         //
     }
@@ -34,7 +35,7 @@ class NotificationController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Notification $notification)
+    public function show(Type_dabonnement $type_dabonnement)
     {
         //
     }
@@ -42,7 +43,7 @@ class NotificationController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Notification $notification)
+    public function edit(Type_dabonnement $type_dabonnement)
     {
         //
     }
@@ -50,7 +51,7 @@ class NotificationController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Notification $notification)
+    public function update(UpdateType_dabonnementRequest $request, Type_dabonnement $type_dabonnement)
     {
         //
     }
@@ -58,7 +59,7 @@ class NotificationController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Notification $notification)
+    public function destroy(Type_dabonnement $type_dabonnement)
     {
         //
     }
