@@ -5,7 +5,7 @@ databases:
 
 services:
 
-  # ── Backend Laravel (PHP natif via Nixpacks) ─────────────────
+  # -- Backend Laravel (PHP natif via Nixpacks) --
   - type: web
     name: gymflow-backend
     plan: free
@@ -28,11 +28,9 @@ services:
       - key: FRONTEND_URL
         value: https://gymflow-frontend.onrender.com
 
-  # ── Frontend React (Static) ──────────────────────────────────
-  - type: web
+  # -- Frontend React (Static) --
+  - type: static
     name: gymflow-frontend
-    runtime: static
-    plan: free
     rootDir: frontend
     buildCommand: npm ci && npm run build
     staticPublishPath: dist
