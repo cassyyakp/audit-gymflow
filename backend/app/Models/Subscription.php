@@ -23,4 +23,9 @@ class Subscription extends Model
     {
         return $this->belongsTo(SubscriptionType::class, 'type_id');
     }
+
+    public function notifications()
+    {
+        return $this->hasMany(Notification::class);
+    }
 }

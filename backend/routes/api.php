@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\SubscriptionTypeController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,4 +37,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('subscriptions', SubscriptionController::class);
 
     Route::apiResource('notifications', NotificationController::class);
+
+    Route::get('/users', [UserController::class, 'index']);
+    Route::delete('/users/{user}', [UserController::class, 'destroy']);
 });
