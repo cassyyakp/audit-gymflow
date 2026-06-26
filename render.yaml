@@ -2,12 +2,14 @@ databases:
   - name: gymflow-db
     plan: free
     databaseName: gymflow
+    databaseUser: gymflow
 
 services:
 
-  # ── Backend Laravel ─────────────────────────────────────────
+  # ── Backend Laravel (Docker) ─────────────────────────────────
   - type: web
     name: gymflow-backend
+    runtime: docker
     plan: free
     rootDir: backend
     dockerfilePath: ./Dockerfile
@@ -27,9 +29,10 @@ services:
       - key: FRONTEND_URL
         value: https://gymflow-frontend.onrender.com
 
-  # ── Frontend React ──────────────────────────────────────────
+  # ── Frontend React (Static) ──────────────────────────────────
   - type: web
     name: gymflow-frontend
+    runtime: static
     plan: free
     rootDir: frontend
     buildCommand: npm ci && npm run build
