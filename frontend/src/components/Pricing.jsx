@@ -34,7 +34,7 @@ function Pricing() {
   const displayTypes = types.length > 0 ? types : fallback
 
   return (
-    <section className="bg-[#0f0f0f] py-24 px-12" id="abonnements">
+    <section className="bg-[#0f0f0f] py-24 px-6 md:px-12" id="abonnements">
       <h2 className="font-['Bebas_Neue'] text-5xl text-white text-center tracking-widest mb-14">
         Nos abonnements
       </h2>
@@ -59,7 +59,7 @@ function Pricing() {
 
               <div className="mb-6">
                 <span className={`font-['Bebas_Neue'] text-6xl leading-none ${index === 1 ? 'text-white' : 'text-white'}`}>
-                  {type.prix}€
+                  {type.prix} FCFA
                 </span>
                 <span className={`font-['Inter'] text-xs ml-1 ${index === 1 ? 'text-white/70' : 'text-white/30'}`}>
                   /{type.duree_jours} jours
