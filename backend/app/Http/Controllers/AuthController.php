@@ -17,7 +17,13 @@ class AuthController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
-            'password' => 'required|min:6'
+            'password' => [
+                'required',
+                'min:8',
+                'regex:/[A-Z]/',
+                'regex:/[0-9]/',
+                'regex:/[@$!%*?&]/',
+            ],
         ]);
 
         $user = User::create([
@@ -28,7 +34,6 @@ class AuthController extends Controller
 
         $token = $user->createToken('auth_token')->plainTextToken;
         Mail::to($user->email)->send(new WelcomeMail($user));
-
 
         return response()->json([
             'message' => 'Utilisateur créé avec succès',
@@ -43,7 +48,6 @@ class AuthController extends Controller
         $user = User::where('email', $request->email)->first();
 
         if (!$user || !Hash::check($request->password, $user->password)) {
-
             return response()->json([
                 'message' => 'Email ou mot de passe incorrect'
             ], 401);
