@@ -8,6 +8,9 @@ services:
       - backend
 
   backend:
+    env_file:
+      - ./backend/.env
+    
     build: ./backend
     ports:
       - "9000:9000"
