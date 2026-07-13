@@ -1,0 +1,31 @@
+version: 2
+updates:
+  # 1. Configuration pour les dépendances PHP (Laravel Backend)
+  - package-ecosystem: "composer"
+    directory: "/backend" 
+    schedule:
+      interval: "daily" 
+    open-pull-requests-limit: 5
+    labels:
+      - "security"
+      - "backend"
+
+  # 2. Configuration pour les dépendances Node.js (Frontend)
+  - package-ecosystem: "npm"
+    directory: "/frontend"
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 5
+    labels:
+      - "security"
+      - "frontend"
+
+  
+  - package-ecosystem: "docker"
+    directory: "/" # Cherche les Dockerfiles à la racine ou dans les sous-dossiers
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 3
+    labels:
+      - "security"
+      - "docker"
