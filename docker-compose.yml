@@ -44,11 +44,13 @@ services:
       retries: 10
       start_period: 30s
 
+
   prometheus:
     image: prom/prometheus:latest
     container_name: gymflow_prometheus
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./alert.rules.yml:/etc/prometheus/alert.rules.yml
     ports:
       - "9090:9090"
     restart: always
@@ -64,6 +66,51 @@ services:
       - grafana_data:/var/lib/grafana
     depends_on:
       - prometheus
+    restart: always
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:v0.47.0
+    container_name: gymflow-cadvisor
+    ports:
+      - "8080:8080"
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+      - /dev/disk/:/dev/disk:ro
+    devices:
+      - /dev/kmsg
+
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: gymflow-node-exporter
+    ports:
+      - "9100:9100"
+    restart: always
+
+  mysqld-exporter:
+    image: prom/mysqld-exporter:latest
+    container_name: gymflow-mysqld-exporter
+    volumes:
+      - ./.my.cnf:/.my.cnf:ro
+    command:
+      - '--config.my-cnf=/.my.cnf'
+    ports:
+      - "9104:9104"
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: always
+
+
+  alertmanager:
+    image: prom/alertmanager:latest
+    container_name: gymflow-alertmanager
+    volumes:
+      - ./alertmanager.yml:/etc/alertmanager/alertmanager.yml
+    ports:
+      - "9093:9093"
     restart: always
 
 volumes:

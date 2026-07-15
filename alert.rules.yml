@@ -1,0 +1,52 @@
+groups:
+  - name: gymflow_alerts
+    rules:
+      # Alerte si un service est down
+      - alert: ServiceDown
+        expr: up == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Service {{ $labels.job }} est indisponible"
+          description: "Le service {{ $labels.job }} ne répond plus depuis 1 minute."
+
+      # Alerte CPU élevé (via cAdvisor)
+      - alert: HighCPUUsage
+        expr: rate(container_cpu_usage_seconds_total[5m]) * 100 > 80
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Utilisation CPU élevée sur {{ $labels.name }}"
+          description: "Le conteneur {{ $labels.name }} utilise plus de 80% de CPU depuis 2 minutes."
+
+      # Alerte RAM élevée
+      - alert: HighMemoryUsage
+        expr: (container_memory_usage_bytes / container_spec_memory_limit_bytes) * 100 > 85
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Utilisation mémoire élevée sur {{ $labels.name }}"
+          description: "Le conteneur {{ $labels.name }} utilise plus de 85% de sa limite mémoire."
+
+      # Alerte MySQL trop de connexions
+      - alert: MySQLTooManyConnections
+        expr: mysql_global_status_threads_connected > 100
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Trop de connexions MySQL actives"
+          description: "{{ $value }} connexions actives sur MySQL."
+
+      # Alerte espace disque faible (via node-exporter)
+      - alert: LowDiskSpace
+        expr: (node_filesystem_avail_bytes / node_filesystem_size_bytes) * 100 < 15
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Espace disque faible"
+          description: "Moins de 15% d'espace disque disponible sur {{ $labels.mountpoint }}."
