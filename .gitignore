@@ -2,6 +2,10 @@
 vendor/
 node_modules/
 
+
+alertmanager.yml
+.my.cnf
+
 # Environnement
 .env
 .env.*
