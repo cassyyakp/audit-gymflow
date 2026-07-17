@@ -7,7 +7,7 @@ import Abonnements from './pages/Abonnements'
 import Payment from './pages/Payment'
 import NotFound from './pages/NotFound'
 import Admin from './pages/Admin'
-import * as Sentry from "@sentry/react";
+// import * as Sentry from "@sentry/react";
 
 const isAuthenticated = () => !!localStorage.getItem('token')
 const isAdmin = () => {
@@ -23,25 +23,25 @@ const AdminRoute = ({ children }) => {
   return isAuthenticated() && isAdmin() ? children : <Navigate to="/login" />
 }
 
-function SandboxCrash() {
-  return (
-    <div style={{ padding: '10px', backgroundColor: '#f8d7da', textAlign: 'center', borderBottom: '1px solid #f5c6cb' }}>
-      <button
-        onClick={() => {
-          try {
-            throw new Error("Gymflow Front Crash - Envoi Manuel Sentry !");
-          } catch (error) {
-            Sentry.captureException(error);
-            alert("Erreur envoyée à Sentry ! Vérifie ton tableau de bord.");
-          }
-        }}
-        style={{ padding: '10px 20px', backgroundColor: '#dc3545', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer', fontWeight: 'bold' }}
-      >
-        Tester Sentry Frontend (Forcé)
-      </button>
-    </div>
-  );
-}
+// function SandboxCrash() {
+//   return (
+//     <div style={{ padding: '10px', backgroundColor: '#f8d7da', textAlign: 'center', borderBottom: '1px solid #f5c6cb' }}>
+//       <button
+//         onClick={() => {
+//           try {
+//             throw new Error("Gymflow Front Crash - Envoi Manuel Sentry !");
+//           } catch (error) {
+//             Sentry.captureException(error);
+//             alert("Erreur envoyée à Sentry ! Vérifie ton tableau de bord.");
+//           }
+//         }}
+//         style={{ padding: '10px 20px', backgroundColor: '#dc3545', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer', fontWeight: 'bold' }}
+//       >
+//         Tester Sentry Frontend (Forcé)
+//       </button>
+//     </div>
+//   );
+// }
 
 
 
@@ -49,7 +49,7 @@ function App() {
   return (
     <BrowserRouter>
 
-      <SandboxCrash />
+      {/* <SandboxCrash /> */}
 
       <Routes>
         <Route path="/" element={<Home />} />
