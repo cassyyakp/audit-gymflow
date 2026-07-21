@@ -22,20 +22,7 @@ RUN apk update && apk upgrade --no-cache
 COPY --from=builder /app/dist /usr/share/nginx/html
 
 # 3. Configuration Nginx avec réécriture React Router + Headers de Sécurité (CSP)
-RUN printf 'server {\n\
-    listen 80;\n\
-    root /usr/share/nginx/html;\n\
-    index index.html;\n\
-\n\
-    # En-têtes de sécurité (Correction SEC-10 & Bonnes pratiques OWASP)\n\
-    add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://TON-BACKEND.up.railway.app https://*.ingest.de.sentry.io; worker-src 'self' blob:;" always;\n\
-    add_header X-Frame-Options "DENY" always;\n\
-    add_header X-Content-Type-Options "nosniff" always;\n\
-\n\
-    location / {\n\
-        try_files $uri $uri/ /index.html;\n\
-    }\n\
-}\n' > /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 
 EXPOSE 80
