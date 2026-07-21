@@ -28,7 +28,7 @@ RUN printf 'server {\n\
     index index.html;\n\
 \n\
     # En-têtes de sécurité (Correction SEC-10 & Bonnes pratiques OWASP)\n\
-    add_header Content-Security-Policy "default-src '\''self'\''; script-src '\''self'\'' '\''unsafe-inline'\''; style-src '\''self'\'' '\''unsafe-inline'\''; img-src '\''self'\'' data: https:; connect-src '\''self'\'' https://groupea-projet3-b3dev-backend.onrender.com;" always;\n\
+    add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://TON-BACKEND.up.railway.app https://*.ingest.de.sentry.io; worker-src 'self' blob:;" always;\n\
     add_header X-Frame-Options "DENY" always;\n\
     add_header X-Content-Type-Options "nosniff" always;\n\
 \n\
