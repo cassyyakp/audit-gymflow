@@ -1,3 +1,5 @@
+import lucie from '../assets/avatar-lucie.jpg'
+
 function Testimonial() {
   return (
     <section className="bg-[#0a0a0a] py-24 px-6 md:px-12">
@@ -11,7 +13,7 @@ function Testimonial() {
         </blockquote>
         <div className="flex items-center gap-4">
           <img
-            src="https://i.pravatar.cc/48?img=47"
+            src={lucie}
             alt="Lucie M."
             className="w-12 h-12 rounded-full object-cover grayscale"
           />

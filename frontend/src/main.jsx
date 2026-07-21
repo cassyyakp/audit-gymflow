@@ -13,11 +13,8 @@ Sentry.init({
   tracesSampleRate: 1.0,
   replaysSessionSampleRate: 0.1,
   replaysOnErrorSampleRate: 1.0,
-});
 
-// const container = document.getElementById("app");
-// const root = createRoot(container);
-// root.render(<App />);
+});
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

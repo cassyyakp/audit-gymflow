@@ -1,3 +1,5 @@
+import imgFeatures from '../assets/img-feature.jpg'
+
 function Features() {
   const features = [
     {
@@ -19,7 +21,7 @@ function Features() {
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-16 items-center">
         <div className="flex-1">
           <img
-            src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800&q=80"
+            src={imgFeatures}
             alt="Salle de sport"
             className="w-full h-100 object-cover rounded-2xl grayscale"
           />
