@@ -19,10 +19,6 @@ use App\Http\Middleware\AdminMiddleware;
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
-Route::get('/sentry-test', function () {
-    throw new Exception('Test-Sentry-HTTP-' . now());
-});
-
 /*
 |--------------------------------------------------------------------------
 | Routes protégées par Sanctum (tous les utilisateurs connectés)
