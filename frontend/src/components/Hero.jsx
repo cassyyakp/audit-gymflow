@@ -6,6 +6,7 @@ function Hero() {
     <section className="relative h-screen min-h-175 overflow-hidden bg-[#0a0a0a]">
       <img
         src={hero}
+        fetchPriority="high"
         alt="GymFlow hero"
         className="absolute inset-0 w-full h-full object-cover object-center"
       />

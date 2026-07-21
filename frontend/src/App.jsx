@@ -7,6 +7,8 @@ import Abonnements from './pages/Abonnements'
 import Payment from './pages/Payment'
 import NotFound from './pages/NotFound'
 import Admin from './pages/Admin'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import LegalNotice from './pages/LegalNotice'
 // import * as Sentry from "@sentry/react";
 
 const isAuthenticated = () => !!localStorage.getItem('token')
@@ -55,6 +57,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/mentions-legales" element={<LegalNotice />} />
         <Route
           path="/dashboard"
           element={

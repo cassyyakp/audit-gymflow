@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import imag4 from '../assets/imag4.jpg'
 
 function Register() {
   const [form, setForm] = useState({ name: '', email: '', password: '', password_confirmation: '' })
@@ -46,7 +47,7 @@ function Register() {
   const imageSide = (quote) => (
     <div className="flex-1 relative overflow-hidden hidden md:block">
       <img
-        src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&q=80"
+        src={imag4}
         alt="Coaching GymFlow"
         className="w-full h-full object-cover object-center filter-[grayscale(0.3)]"
       />
@@ -122,6 +123,9 @@ function Register() {
               Créer mon compte
             </button>
           </form>
+          <p className="text-[13px] text-white/60 mt-5 font-['Inter']">
+            En vous inscrivant, vous acceptez notre politique de confidentialité.
+          </p>
 
           <p className="text-center text-[13px] text-white/30 mt-5 font-['Inter']">
             Déjà un compte ?{' '}
