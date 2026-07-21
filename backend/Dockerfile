@@ -1,6 +1,8 @@
 # ─── Base : PHP 8.3 ──────────────────────────────────────────
 FROM php:8.3-cli-alpine
 
+RUN apk update && apk upgrade --no-cache
+
 # Extensions PHP nécessaires pour Laravel
 RUN apk add --no-cache \
         bash \
