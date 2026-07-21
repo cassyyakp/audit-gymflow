@@ -89,27 +89,27 @@ jobs:
         working-directory: backend
         run: docker build -t gymflow-backend .
 
-  # ─────────────────────────────────────────
-  # JOB 4 : Déploiement sur Railway
-  # ─────────────────────────────────────────
-  deploy:
-    name: Déploiement en production (Railway)
-    runs-on: ubuntu-latest
-    needs: [test-backend, test-frontend, build-docker]
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+  # # ─────────────────────────────────────────
+  # # JOB 4 : Déploiement sur Railway
+  # # ─────────────────────────────────────────
+  # deploy:
+  #   name: Déploiement en production (Railway)
+  #   runs-on: ubuntu-latest
+  #   needs: [test-backend, test-frontend, build-docker]
+  #   if: github.event_name == 'push' && github.ref == 'refs/heads/main'
 
-    steps:
-      - name: Récupérer le code
-        uses: actions/checkout@v4
+  #   steps:
+  #     - name: Récupérer le code
+  #       uses: actions/checkout@v4
 
-      - name: Installer la CLI Railway et Déployer
-        uses: bervProject/railway-deploy-action@v1
-        with:
-          railway_token: ${{ secrets.RAILWAY_TOKEN }}
-          service: "illustrious-integrity" 
+  #     - name: Installer la CLI Railway et Déployer
+  #       uses: bervProject/railway-deploy-action@v1
+  #       with:
+  #         railway_token: ${{ secrets.RAILWAY_TOKEN }}
+  #         service: "illustrious-integrity" 
 
   # ─────────────────────────────────────────
-  # JOB 5 : Tests de charge (Artillery)
+  # JOB 4 : Tests de charge (Artillery)
   # ─────────────────────────────────────────
   load-test:
     name: Tests de charge (Artillery)
