@@ -17,6 +17,7 @@ return [
     'allowed_origins' => [
         env('FRONTEND_URL', 'http://localhost:5173'),
         'https://*.railway.app',
+        'https://illustrious-integrity-production-e161.up.railway.app',
     ],
 
     'allowed_origins_patterns' => [],
