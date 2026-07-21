@@ -22,6 +22,7 @@ function Features() {
         <div className="flex-1">
           <img
             src={imgFeatures}
+            loading="lazy"
             alt="Salle de sport"
             className="w-full h-100 object-cover rounded-2xl grayscale"
           />

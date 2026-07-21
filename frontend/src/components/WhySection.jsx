@@ -8,6 +8,7 @@ function WhySection() {
           <img
             src={image}
             alt="Notre équipe"
+            loading="lazy"
             className="w-full h-full object-cover grayscale"
           />
         </div>

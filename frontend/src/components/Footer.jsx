@@ -39,10 +39,16 @@ function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/5 pt-6 text-center">
-        <p className="font-['Inter'] text-xs text-white/20">
-          © 2026 GymFlow. Tous droits réservés.
-        </p>
+      <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center text-sm">
+        <p>© 2026 GymFlow. Tous droits réservés.</p>
+        <div className="flex gap-4 mt-4 sm:mt-0">
+          <Link to="/privacy" className="hover:text-white transition-colors">
+            Politique de Confidentialité
+          </Link>
+          <Link to="/mentions-legales" className="hover:text-white transition-colors">
+            Mentions Légales
+          </Link>
+        </div>
       </div>
     </footer>
   )

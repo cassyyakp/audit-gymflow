@@ -37,7 +37,7 @@ function Navbar() {
               <Link to="/dashboard" className="text-white/60 font-['Inter'] text-sm hover:text-white transition-colors px-3 py-2">
                 Mon espace
               </Link>
-              <button onClick={handleLogout} className="px-5 py-2 bg-[#FF5500] text-white rounded-full font-['Inter'] text-sm font-medium hover:bg-orange-600 transition-colors">
+              <button onClick={handleLogout} className="px-5 py-2 bg-[#FF5500] text-gray-100 rounded-full font-['Inter'] text-sm font-medium hover:bg-orange-600 transition-colors">
                 Déconnexion
               </button>
             </>
@@ -46,7 +46,7 @@ function Navbar() {
               <Link to="/login" className="text-white/60 font-['Inter'] text-sm hover:text-white transition-colors px-3 py-2">
                 Connexion
               </Link>
-              <Link to="/register" className="px-5 py-2 bg-[#FF5500] text-white rounded-full font-['Inter'] text-sm font-medium hover:bg-orange-600 transition-colors">
+              <Link to="/register" className="px-5 py-2 bg-[#FF5500] text-gray-100 rounded-full font-['Inter'] text-sm font-medium hover:bg-orange-600 transition-colors">
                 S'inscrire
               </Link>
             </>

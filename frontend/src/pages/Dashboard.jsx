@@ -198,7 +198,7 @@ function Dashboard() {
           <h1 className="font-['Bebas_Neue'] text-4xl md:text-5xl text-white tracking-wide leading-none mb-2">
             {getGreeting()}, <span className="text-[#FF5500]">{user?.name}</span>
           </h1>
-          <p className="text-sm text-white/40 font-['Inter']">Bienvenue dans ton espace membre GymFlow.</p>
+          <p className="text-sm text-white/70 font-['Inter']">Bienvenue dans ton espace membre GymFlow.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
@@ -212,7 +212,7 @@ function Dashboard() {
               >Modifier</button>
             </div>
             <p className="font-['Bebas_Neue'] text-3xl text-white tracking-wide mb-1.5">{user?.name}</p>
-            <p className="text-[13px] text-white/35 font-['Inter']">{user?.email}</p>
+            <p className="text-[13px] text-white/60 font-['Inter']">{user?.email}</p>
           </div>
 
           <div className="bg-[#161616] border border-white/5 rounded-2xl p-6">
@@ -224,7 +224,7 @@ function Dashboard() {
                 <p className="text-sm text-white/35 mb-5 leading-relaxed font-['Inter']">Tu n'as pas encore d'abonnement actif.</p>
                 <button
                   onClick={() => navigate('/abonnements')}
-                  className="px-5 py-2.5 bg-[#FF5500] text-white border-none rounded-xl text-sm font-semibold hover:bg-[#e04a00] transition-colors cursor-pointer font-['Inter']"
+                  className="px-5 py-2.5 bg-[#FF5500] text-gray-100 border-none rounded-xl text-sm font-semibold hover:bg-[#e04a00] transition-colors cursor-pointer font-['Inter']"
                 >Choisir un abonnement</button>
               </div>
             ) : (
@@ -233,7 +233,7 @@ function Dashboard() {
                   <p className="font-['Bebas_Neue'] text-xl text-white tracking-wide mb-1">
                     {sub.subscription_type?.nom_type ?? 'Abonnement'}
                   </p>
-                  <p className="text-xs text-white/35 mb-2.5 font-['Inter']">
+                  <p className="text-xs text-white/60 mb-2.5 font-['Inter']">
                     Du {formatDate(sub.date_debut)} au {formatDate(sub.date_fin)}
                   </p>
                   <div className="flex items-center justify-between mt-2">

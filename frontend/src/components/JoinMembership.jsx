@@ -7,6 +7,7 @@ function JoinMembership() {
       <img
         src={image}
         alt="image-outil-sport"
+        loading="lazy"
         className="absolute inset-0 w-full h-full object-cover opacity-10"
       />
       <div className="absolute inset-0 bg-linear-to-r from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent" />

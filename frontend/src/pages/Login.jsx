@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import gymImg from '../assets/gymImg.jpg'
 
 function Login() {
   const [form, setForm] = useState({ email: '', password: '' })
@@ -33,7 +34,7 @@ function Login() {
 
       <div className="flex-1 relative overflow-hidden hidden md:block">
         <img
-          src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&q=80"
+          src={gymImg}
           alt="Salle de sport GymFlow"
           className="w-full h-full object-cover object-center filter-[grayscale(0.3)]"
         />
@@ -55,7 +56,7 @@ function Login() {
           </span>
 
           <h1 className="font-['Bebas_Neue'] text-4xl text-white tracking-wide mb-1.5">Connexion</h1>
-          <span className="text-[13px] text-white/35 mb-8 block font-['Inter']">Accède à ton espace membre</span>
+          <span className="text-[13px] text-white/60 mb-8 block font-['Inter']">Accède à ton espace membre</span>
 
           {error && (
             <div className="bg-red-500/8 border border-red-500/20 text-red-400 rounded-lg px-3.5 py-3 text-[13px] mb-5 font-['Inter']">
@@ -69,7 +70,7 @@ function Login() {
               { id: 'password', label: 'Mot de passe', type: 'password', placeholder: '••••••••' },
             ].map(({ id, label, type, placeholder }) => (
               <div key={id} className="mb-4.5">
-                <label htmlFor={id} className="block text-[11px] font-semibold uppercase tracking-widest text-white/45 mb-2 font-['Inter']">
+                <label htmlFor={id} className="block text-[11px] font-semibold uppercase tracking-widest text-white/60 mb-2 font-['Inter']">
                   {label}
                 </label>
                 <input
@@ -80,12 +81,22 @@ function Login() {
               </div>
             ))}
 
-            <button type="submit" className="w-full py-3.5 bg-[#FF5500] text-white border-none rounded-lg text-sm font-bold cursor-pointer mt-2.5 hover:bg-[#e04a00] transition-colors block text-center font-['Inter']">
+            <button type="submit" className="w-full py-3.5 bg-[#FF5500] text-gray-100 border-none rounded-lg text-sm font-bold cursor-pointer mt-2.5 hover:bg-[#e04a00] transition-colors block text-center font-['Inter']">
               Se connecter
             </button>
           </form>
+          <p className="mt-4 text-center text-[13px] text-gray-100 dark:text-gray-400">
+            En vous inscrivant, vous acceptez notre{' '}
+            <Link to="/privacy" className="text-orange-600 hover:underline underline-offset-2">
+              politique de confidentialité
+            </Link>{' '}
+            et nos{' '}
+            <Link to="/mentions-legales" className="text-orange-600 hover:underline underline-offset-2">
+              mentions légales
+            </Link>.
+          </p>
 
-          <p className="text-center text-[13px] text-white/30 mt-5 font-['Inter']">
+          <p className="text-center text-[13px] text-white/60 mt-5 font-['Inter']">
             Pas encore de compte ?{' '}
             <Link to="/register" className="text-[#FF5500] font-semibold no-underline hover:underline">S'inscrire</Link>
           </p>
