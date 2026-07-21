@@ -1,10 +1,12 @@
+import image from '../assets/imag4.jpg'
+
 function WhySection() {
   return (
     <section className="bg-[#0a0a0a] py-24 px-6 md:px-12" id="apropos">
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         <div className="rounded-2xl overflow-hidden h-130">
           <img
-            src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80"
+            src={image}
             alt="Notre équipe"
             className="w-full h-full object-cover grayscale"
           />

@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom'
+import image from '../assets/imag5.jpg'
 
 function JoinMembership() {
   return (
     <section className="relative overflow-hidden bg-[#0a0a0a] py-32 px-6 md:px-12">
       <img
-        src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1920&q=80"
-        alt=""
+        src={image}
+        alt="image-outil-sport"
         className="absolute inset-0 w-full h-full object-cover opacity-10"
       />
       <div className="absolute inset-0 bg-linear-to-r from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent" />
@@ -45,8 +46,8 @@ function JoinMembership() {
               {[11, 22, 33, 44].map(i => (
                 <img
                   key={i}
-                  src={`https://i.pravatar.cc/28?img=${i}`}
-                  alt=""
+                  src={`https://api.dicebear.com/9.x/avataaars/svg?seed=${i}`}
+                  alt="avatar-profil"
                   className="w-7 h-7 rounded-full border-2 border-[#0a0a0a] object-cover"
                 />
               ))}
