@@ -13,6 +13,7 @@
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^3.0",
         "sentry/sentry-laravel": "^4.26",
+        "spatie/laravel-csp": "^3.26",
         "symfony/http-foundation": "^7.4",
         "symfony/routing": "^7.4"
     },
