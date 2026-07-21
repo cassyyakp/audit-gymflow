@@ -1,22 +1,26 @@
+import imag1 from '../assets/imag1.jpg'
+import imag2 from '../assets/imag2.jpg'
+import imag3 from '../assets/imag3.jpg'
+
 function Cours() {
   const cours = [
     {
       id: 1,
       title: 'YOGA DYNAMIQUE',
       desc: 'Renforcez votre équilibre et votre souplesse avec nos sessions de Yoga.',
-      image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80',
+      image: imag1,
     },
     {
       id: 2,
       title: 'CROSS-TRAINING',
       desc: 'Dépassez vos limites avec nos programmes de haute intensité.',
-      image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80',
+      image: imag2,
     },
     {
       id: 3,
       title: 'PILATES',
       desc: 'Travaillez votre posture et votre gainage en profondeur.',
-      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=80',
+      image: imag3,
     },
   ]
 

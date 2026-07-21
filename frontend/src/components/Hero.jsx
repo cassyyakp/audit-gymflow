@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom'
+import hero from '../assets/gymImg.jpg'
 
 function Hero() {
   return (
     <section className="relative h-screen min-h-175 overflow-hidden bg-[#0a0a0a]">
       <img
-        src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80"
+        src={hero}
         alt="GymFlow hero"
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
@@ -25,8 +26,8 @@ function Hero() {
             {[11, 22, 33].map(i => (
               <img
                 key={i}
-                src={`https://i.pravatar.cc/32?img=${i}`}
-                alt=""
+                src={`https://api.dicebear.com/9.x/avataaars/svg?seed=${i}`}
+                alt="avatar-profil"
                 className="w-8 h-8 rounded-full border-2 border-black object-cover"
               />
             ))}
