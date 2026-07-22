@@ -20,8 +20,6 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
 
-Route::get('subscription-types', [SubscriptionTypeController::class, 'index']);
-Route::get('subscription-types/{subscriptionType}', [SubscriptionTypeController::class, 'show']);
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +35,8 @@ Route::middleware('auth:sanctum')->group(function () {
         return $request->user();
     });
 
+    Route::get('subscription-types', [SubscriptionTypeController::class, 'index']);
+    Route::get('subscription-types/{subscriptionType}', [SubscriptionTypeController::class, 'show']);
 
     Route::apiResource('subscriptions', SubscriptionController::class);
 
