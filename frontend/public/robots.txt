@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://illustrious-integrity-production-e161.up.railway.app/sitemap.xml
