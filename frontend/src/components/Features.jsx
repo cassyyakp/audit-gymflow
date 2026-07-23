@@ -1,4 +1,4 @@
-import imgFeatures from '../assets/img-feature.jpg'
+import imgFeatures from '../assets/img-feature.webp'
 
 function Features() {
   const features = [

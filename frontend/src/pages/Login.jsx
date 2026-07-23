@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import gymImg from '../assets/gymImg.jpg'
+import gymImg from '../assets/gymImg.webp'
 
 function Login() {
   const [form, setForm] = useState({ email: '', password: '' })
